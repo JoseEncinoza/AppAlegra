@@ -1,0 +1,42 @@
+<br /><br />
+<div class="container">
+    <?php if($this->datos){ ?>
+        <div class="row">
+            <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2">Nombre</div>
+            <div class="hidden-xs hidden-sm hidden-md col-lg-2"">Identificacion</div>
+            <div class="hidden-xs col-sm-2 col-md-2 col-lg-2">Telefono</div>
+            <div class="hidden-xs col-sm-3 col-md-3 col-lg-2">Email</div>
+        </div>
+        <br>
+        <?php foreach ($this->datos as $d) : ?>
+            <div class="row fila">
+                <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2">
+                <a href="
+                <?php echo $this->url(array('controller' => 'index','action' => 'update', 'id' => $d["id"])); ?>">
+                <?php echo $d["name"]; ?>
+                </a>
+                </div>
+                <div class="hidden-xs hidden-sm hidden-md col-lg-2"> <?php echo $d["identification"]; ?> </div>
+                <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"> <?php echo $d["phonePrimary"]; ?> </div>
+                <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"> <?php echo $d["email"]; ?> </div>
+                <div class="col-xs-8 col-sm-3 col-md-3 col-lg-2">
+                    <a class="btn" href="<?php echo $this->url(array('controller' => 'index',
+                       'action' => 'show', 'id' => $d["id"])); ?>"><span class="glyphicon glyphicon-search"></a>
+                    <a class="btn" href="<?php echo $this->url(array('controller' => 'index',
+                       'action' => 'update', 'id' => $d["id"])); ?>"><span class="glyphicon glyphicon-pencil"></a>
+                    <a class="btn" href="<?php echo $this->url(array('controller' => 'index',
+                       'action' => 'delete', 'id' => $d["id"])); ?>" onclick="return confirm('¿Desea Eliminar el Contacto Permanentemente?');"><span class="glyphicon glyphicon-remove"></a>
+                </div>
+            </div>
+         <?php endforeach;}else{ ; ?>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <h3>Aun no ha creado su primer contacto</h3>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <a class="btn btn-2" href="<?php echo $this->url(array('controller' => 'index',
+                       'action' => 'add')); ?>">Crear un Contacto</a>
+                </div>
+           </div>
+    <?php }?>
+</div>

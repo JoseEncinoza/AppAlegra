@@ -1,0 +1,79 @@
+<h2><?php echo $this->datos["name"]; ?></h2>
+
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 box">
+	<h4>iD</h4>
+	<p><?php echo $this->datos["id"]; ?></p>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5 box">
+	<h4>Identificacion</h4>
+	<p><?php echo $this->datos["identification"]; ?></p>	
+</div>
+<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5 box">
+	<h4>Correo</h4>
+	<p><?php echo $this->datos["email"]; ?></p>
+</div>
+
+<div class="clearfix"></div>
+
+
+<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5 box">
+	<h4>Telefono 1</h4>
+	<p><?php echo $this->datos["phonePrimary"]; ?></p>	
+</div>
+<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5 box">
+	<h4>Telefono 2</h4>
+	<p><?php echo $this->datos["phoneSecondary"]; ?></p>	
+</div>
+
+<div class="clearfix"></div>
+
+<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5 box">
+	<h4>Direccion</h4>
+	<?php foreach ($this->datos["address"] as $d)
+        {
+          echo "<p>".$d."</p>";
+        } ?>	
+</div>
+<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5 box">
+	<h4>Fax</h4>
+	<p><?php echo $this->datos["fax"]; ?></p>	
+</div>
+
+<div class="clearfix"></div>
+
+<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5 box">
+	<h4>Celular</h4>
+	<p><?php echo $this->datos["mobile"]; ?></p>
+</div>
+<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5 box">
+	<h4>Tipo de Contacto</h4>
+	<?php foreach ($this->datos["type"] as $d)
+        {
+          echo "<p>".$d."</p>";
+        } ?>
+</div>
+<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 box">
+	<h4>Observaciones</h4>
+	<p><?php echo $this->datos["observations"]; ?></p>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+	<a class="btn btn-2" href="<?php echo $this->url(array('controller' => 'index',
+     'action' => 'update', 'id' => $this->datos["id"])); ?>">Editar Contacto</a>
+</div>
+
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+	<a class="btn btn-3" href="<?php echo $this->url(array('controller' => 'index',
+     'action' => 'delete', 'id' => $this->datos["id"])); ?>" onclick="return confirm('¿Desea Eliminar el Contacto Permanentemente?');">Eliminar Contacto</a>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+
+.navbar-1{
+	background: #fff;
+}
+.navbar-1 a, .titulo{
+	color: #00B2A9;
+}
+.navbar-1 li a:hover{
+	color: #00B2A9;
+	background: #000;
+}
+table{
+	width: 100%;
+}
+.fila:hover{
+	background:  rgba(0,178,169,0.5);
+	color: #fff;
+}
+.contenido{
+	text-align: left;
+	font-size: 14px;
+}
+input, textarea{
+	width: 100%;
+}
+textarea
+{
+	height: 110px;
+	resize: none;
+}
+label{
+	color: #00857E;
+}
+.box{
+	background: rgba(0,178,169,0.5);
+	margin: 10px;
+}
+ul.errors li{
+    color: red;
+    font-weight: bold;
+}
+.btn-1 {
+	background: #00B2A9;
+	color: #fff;
+}
+.btn-2, .btn-3 {
+	width: 100%;
+	margin-top: 20px;
+	color: #fff;
+}
+.btn-2
+{	
+	background: #00B2A9;
+}
+.btn-3{
+	background: #006E68;
+}
+.btn-3:hover{
+	border: solid 4px red;
+}
